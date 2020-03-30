@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="644.0" prefWidth="969.0" styleClass="paneBody" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication11.FXMLDocumentController">
+   <children>
+      <Pane layoutX="8.0" opacity="0.73" prefHeight="644.0" prefWidth="171.0" styleClass="foodBackGround" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="878.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="35.0" layoutY="28.0" text="Control Panel" textFill="#f5f3f3">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnReciption" layoutX="19.0" layoutY="76.0" mnemonicParsing="false" onAction="#showReciption" opacity="0.75" prefHeight="27.0" prefWidth="133.0" styleClass="ok" stylesheets="@Style.css" text="Reciption" />
+            <Button fx:id="btnCustomer" layoutX="18.0" layoutY="115.0" mnemonicParsing="false" onAction="#showCustomer" opacity="0.75" prefHeight="27.0" prefWidth="133.0" styleClass="ok" stylesheets="@Style.css" text="Customer" />
+            <Label layoutX="9.0" layoutY="618.0" text="Powred by Hayder Alraeai" textFill="#f8f5f5">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="paneReciption" layoutX="171.0" prefHeight="644.0" prefWidth="879.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="-1.0" layoutY="53.0" prefHeight="591.0" prefWidth="879.0" styleClass="customerPaneBackground" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TableView fx:id="tblView" layoutX="19.0" layoutY="45.0" onMouseClicked="#selectedTable" opacity="0.95" prefHeight="271.0" prefWidth="599.0" stylesheets="@Style.css" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="261.0" AnchorPane.topAnchor="45.0">
+                    <columns>
+                      <TableColumn fx:id="tblId" prefWidth="30.0" text="#" />
+                      <TableColumn fx:id="tblName" prefWidth="146.0" text="Name" />
+                        <TableColumn fx:id="tblContact" prefWidth="120.0" text="Telefon" />
+                        <TableColumn fx:id="tblDays" prefWidth="44.0" text="Days" />
+                        <TableColumn fx:id="tblRoomNumber" prefWidth="56.0" text="Room Nr" />
+                        <TableColumn fx:id="tblRoomType" prefWidth="109.0" text="RoomType" />
+                        <TableColumn fx:id="tblTotalPrice" prefWidth="116.0" text="Total Price" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="txtName" alignment="CENTER" layoutX="20.0" layoutY="395.0" onKeyPressed="#showItemsInTblEfterSearching" opacity="0.91" prefHeight="35.0" prefWidth="279.0" promptText="Enter Name" styleClass="textField" stylesheets="@Style.css">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtContact" alignment="CENTER" layoutX="20.0" layoutY="444.0" opacity="0.91" prefHeight="35.0" prefWidth="279.0" promptText="Enter telefon number" styleClass="textField" stylesheets="@Style.css">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtDays" alignment="CENTER" layoutX="20.0" layoutY="493.0" opacity="0.91" prefHeight="35.0" prefWidth="279.0" promptText="Enter days to stay" styleClass="textField" stylesheets="@Style.css">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font></TextField>
+                  <Button fx:id="btnBook" layoutX="234.0" layoutY="592.0" mnemonicParsing="false" onAction="#addCustomer" prefHeight="27.0" prefWidth="66.0" styleClass="ok" stylesheets="@Style.css" text="Book" />
+                  <Button fx:id="btnClear" layoutX="157.0" layoutY="592.0" mnemonicParsing="false" onAction="#clear" prefHeight="27.0" prefWidth="66.0" styleClass="update" stylesheets="@Style.css" text="Clear" />
+                  <ComboBox fx:id="ComRoomType" layoutX="20.0" layoutY="540.0" opacity="0.91" prefHeight="35.0" prefWidth="279.0" promptText="Choose Room Type" styleClass="textField" stylesheets="@Style.css" />
+                  <ComboBox fx:id="ComSearch" layoutX="366.0" layoutY="10.0" opacity="0.91" prefHeight="27.0" prefWidth="181.0" promptText="By" styleClass="textField" stylesheets="@Style.css" />
+                  <TextField fx:id="txtSearch" layoutX="19.0" layoutY="9.0" onKeyPressed="#showItemsInTblEfterSearching" opacity="0.91" prefHeight="29.0" prefWidth="341.0" promptText="Search" styleClass="textField" stylesheets="@Style.css" />
+                  <Pane layoutX="440.0" layoutY="392.0" opacity="0.86" prefHeight="228.0" prefWidth="421.0" styleClass="foodBackGround" stylesheets="@Style.css">
+                     <children>
+                        <TextArea fx:id="txtShowBill" editable="false" layoutX="9.0" layoutY="42.0" prefHeight="179.0" prefWidth="404.0" stylesheets="@Style.css" />
+                        <Label alignment="CENTER" layoutX="114.0" layoutY="5.0" prefHeight="24.0" prefWidth="187.0" styleClass="title" text="Select to show bill">
+                           <stylesheets>
+                              <URL value="@Style.css" />
+                              <URL value="@Style.css" />
+                           </stylesheets>
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+                  <Button layoutX="555.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchItem" prefHeight="27.0" prefWidth="59.0" styleClass="update" stylesheets="@Style.css" text="Search" />
+                  <Button fx:id="btnDelete" layoutX="91.0" layoutY="592.0" mnemonicParsing="false" onAction="#deleteSelected" styleClass="danger" stylesheets="@Style.css" text="Delete" />
+                  <Button fx:id="btnUpdate" layoutX="19.0" layoutY="593.0" mnemonicParsing="false" onAction="#updateSelected" styleClass="update" stylesheets="@Style.css" text="Update" />
+                  <Label fx:id="lblDone" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="330.0" prefHeight="27.0" prefWidth="279.0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="677.0" layoutY="45.0" opacity="0.65" prefHeight="300.0" prefWidth="181.0" styleClass="foodBackGround" stylesheets="@Style.css">
+                     <children>
+                        <ComboBox fx:id="ComMeal" layoutX="16.0" layoutY="227.0" prefWidth="150.0" promptText="Choose Meal" />
+                        <Button layoutX="38.0" layoutY="263.0" mnemonicParsing="false" onAction="#orderFood" prefHeight="24.0" prefWidth="109.0" styleClass="ok" stylesheets="@Style.css" text="Place order" />
+                        <Label alignment="CENTER" layoutX="16.0" prefHeight="17.0" prefWidth="150.0" text="Food Menu" textFill="#9a5e5e">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tblFoodMenu" accessibleRole="IMAGE_VIEW" layoutX="5.0" layoutY="52.0" pickOnBounds="false" prefHeight="167.0" prefWidth="171.0">
+                          <columns>
+                            <TableColumn fx:id="tblFoodName" prefWidth="102.0" text="Food" />
+                            <TableColumn fx:id="tblFoodPriceMenu" prefWidth="68.0" text="Price" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="lblFood" alignment="CENTER" layoutX="7.0" layoutY="27.0" prefHeight="17.0" prefWidth="171.0" textFill="#f51818">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneCustomer" layoutX="146.0" prefHeight="200.0" prefWidth="901.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="22.0" prefHeight="644.0" prefWidth="879.0" styleClass="customerPaneBackground" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TextField fx:id="txtNameC" alignment="CENTER" layoutX="228.0" layoutY="397.0" onKeyPressed="#showItemsInTblEfterSearching" opacity="0.81" prefHeight="43.0" prefWidth="421.0" promptText="Enter Name" styleClass="customertxtField" stylesheets="@Style.css">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtContactC" alignment="CENTER" layoutX="228.0" layoutY="460.0" opacity="0.81" prefHeight="43.0" prefWidth="421.0" promptText="Enter telefon number" styleClass="customertxtField" stylesheets="@Style.css">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtDaysC" alignment="CENTER" layoutX="229.0" layoutY="519.0" opacity="0.81" prefHeight="43.0" prefWidth="421.0" promptText="Enter days to stay" styleClass="customertxtField" stylesheets="@Style.css">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnBookC" layoutX="338.0" layoutY="573.0" mnemonicParsing="false" onAction="#addCustomerC" opacity="0.81" prefHeight="43.0" prefWidth="103.0" styleClass="ok" stylesheets="@Style.css" text="Book" />
+                  <Button fx:id="btnClearC" layoutX="229.0" layoutY="574.0" mnemonicParsing="false" onAction="#clear" opacity="0.81" prefHeight="43.0" prefWidth="103.0" styleClass="update" stylesheets="@Style.css" text="Clear" />
+                  <ComboBox fx:id="ComRoomTypeC" layoutX="450.0" layoutY="571.0" opacity="0.81" prefHeight="43.0" prefWidth="197.0" promptText="Choose Room Type" styleClass="customertxtField" stylesheets="@Style.css" />
+                  <Button fx:id="btnCheckout" layoutX="221.0" layoutY="27.0" mnemonicParsing="false" onAction="#showCheckOut" opacity="0.75" prefHeight="27.0" prefWidth="126.0" styleClass="danger" stylesheets="@Style.css" text="Check Out">
+                     <font>
+                        <Font name="American Typewriter" size="17.0" />
+                     </font></Button>
+                  <Button fx:id="btnCheckout1" layoutX="357.0" layoutY="27.0" mnemonicParsing="false" onAction="#showFoodMenu" opacity="0.75" prefHeight="27.0" prefWidth="126.0" styleClass="ok" stylesheets="@Style.css" text="Food Menu">
+                     <font>
+                        <Font name="American Typewriter" size="17.0" />
+                     </font></Button>
+                  <Button fx:id="btnCheckout11" layoutX="495.0" layoutY="27.0" mnemonicParsing="false" onAction="#showRoomDetails" opacity="0.75" prefHeight="34.0" prefWidth="133.0" styleClass="update" stylesheets="@Style.css" text="Room Details">
+                     <font>
+                        <Font name="American Typewriter" size="17.0" />
+                     </font></Button>
+                  <Pane fx:id="paneCustomerCP" layoutX="184.0" layoutY="65.0" prefHeight="265.0" prefWidth="500.0" stylesheets="@Style.css">
+                     <children>
+                        <Pane fx:id="paneCheckOut" opacity="0.81" prefHeight="265.0" prefWidth="500.0" visible="false">
+                           <children>
+                              <Pane layoutX="3.0" layoutY="2.0" opacity="0.81" prefHeight="257.0" prefWidth="500.0">
+                                 <children>
+                                    <TextArea fx:id="txtShowBillC" editable="false" layoutX="51.0" layoutY="75.0" prefHeight="179.0" prefWidth="349.0" stylesheets="@Style.css">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </TextArea>
+                                    <Button layoutX="316.0" layoutY="36.0" mnemonicParsing="false" onAction="#checkout" prefHeight="29.0" prefWidth="86.0" text="Check Out" />
+                                    <TextField fx:id="txtRoomNr" alignment="CENTER" layoutX="51.0" layoutY="37.0" onKeyPressed="#showItemsInTblEfterSearching" prefHeight="27.0" prefWidth="252.0" promptText="Enter Room Number" styleClass="customertxtField" stylesheets="@Style.css">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="paneFoodMenu" opacity="0.81" prefHeight="265.0" prefWidth="500.0" visible="false">
+                           <children>
+                              <Pane layoutX="13.0" layoutY="3.0" prefHeight="257.0" prefWidth="447.0" stylesheets="@Style.css">
+                                 <children>
+                                    <ComboBox fx:id="ComMealC" layoutX="168.0" layoutY="195.0" prefWidth="150.0" promptText="Choose Meal" styleClass="customertxtField" stylesheets="@Style.css" />
+                                    <Button layoutX="326.0" layoutY="195.0" mnemonicParsing="false" onAction="#orderFoodC" prefHeight="24.0" prefWidth="109.0" styleClass="ok" stylesheets="@Style.css" text="Place order" />
+                                    <TableView fx:id="tblFoodMenuC" accessibleRole="IMAGE_VIEW" layoutX="37.0" layoutY="14.0" pickOnBounds="false" prefHeight="167.0" prefWidth="398.0">
+                                       <columns>
+                                          <TableColumn fx:id="tblFoodNameC" editable="false" prefWidth="190.0" resizable="false" sortable="false" text="Food" />
+                                          <TableColumn fx:id="tblFoodPriceMenuC" editable="false" prefWidth="88.0" resizable="false" sortable="false" text="Price" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="txtRoomNrFood" layoutX="38.0" layoutY="195.0" prefHeight="27.0" prefWidth="126.0" promptText="Enter room Number" styleClass="customertxtField" stylesheets="@Style.css" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="paneRoomDetails" layoutX="-1.0" opacity="0.81" prefHeight="265.0" prefWidth="500.0" visible="false">
+                           <children>
+                              <TableView fx:id="tblRoomDetails" layoutX="63.0" prefHeight="265.0" prefWidth="359.0">
+                                <columns>
+                                  <TableColumn fx:id="tblRoomName" editable="false" prefWidth="117.0" resizable="false" sortable="false" text="Room Name" />
+                                  <TableColumn fx:id="tblRoomPrice" editable="false" prefWidth="105.0" resizable="false" sortable="false" text="Room Price" />
+                                    <TableColumn fx:id="tblTV" editable="false" prefWidth="58.0" resizable="false" sortable="false" text="TV" />
+                                    <TableColumn fx:id="tblRoomAvailable" editable="false" prefWidth="78.0" resizable="false" sortable="false" text="Available" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Label fx:id="lblDoneC" alignment="CENTER" layoutX="6.0" layoutY="333.0" prefHeight="53.0" prefWidth="861.0" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <AnchorPane fx:id="paneCustomer1" layoutX="158.0" layoutY="10.0" prefHeight="200.0" prefWidth="743.0" visible="false">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="customerPaneBackground" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="paneMain" layoutX="171.0" prefHeight="644.0" prefWidth="879.0" styleClass="customerPaneBackground" stylesheets="@Style.css" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+.paneControl{
+    -fx-background-color: #3399ff;
+}
+.reciptionPane{
+    -fx-background-color: #ffffff;
+}
+.paneBody{
+    -fx-background-color: #d2d2d2;
+}
+.button{
+    -fx-background-radius: 50px;
+}
+.textField{
+    -fx-background-color: white;
+/*    -fx-border-color: #d2d2d2;*/
+    -fx-background-radius: 50px; 
+}
+.customertxtField{
+    -fx-background-color: white;
+    -fx-background-radius: 50px; 
+}
+.maintainReciption{
+    -fx-background-color: white;
+}
+.title{
+    -fx-text-fill: #26bf05;
+}
+.billBackground{
+    -fx-background-color: #d2d2d2;
+    -fx-background-radius: 20px;
+}
+.update{
+    -fx-background-color: #edcd24;
+}
+.danger{
+    -fx-background-color: red;
+    -fx-text-fill:white;
+}
+.ok{
+    -fx-background-color: green;
+    -fx-text-fill:white;
+}
+.customerPaneBackground{
+    -fx-background-image: url("../javafxapplication11/background.jpg");
+}
+.foodBackGround{
+    -fx-background-color: #000;
+}
